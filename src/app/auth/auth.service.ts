@@ -5,6 +5,7 @@ import { Subject }  from 'rxjs';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Subscription } from 'rxjs';
 
 import { TrainingService } from '../training/training.service';
 import { UiService } from './../shared/ui.service';
@@ -20,6 +21,7 @@ export class AuthService {
   
  // authChange=new Subject<boolean>();
     private user:User;
+    private fbSubs: Subscription[]=[];
   //private isAuthentiCated = false;
 
   constructor(
@@ -93,8 +95,8 @@ export class AuthService {
         this.trainingService.cancelSubscriptions();
         //this.authChange.next(false);
         this.store.dispatch(new Auth.SetUnauthenticated());
-        //this.router.navigate(['/login']);
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
+        //this.router.navigate(['']);
         //this.isAuthentiCated=false;
        }
       });
@@ -108,7 +110,9 @@ export class AuthService {
 
     private addDataToDatabase(authData : AuthData){
       this.db.collection('users').add(authData);
- }
+    }
+
+   
 
     /* getUser()
     {

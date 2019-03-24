@@ -125,7 +125,7 @@ export class TrainingService {
   fetchCompletedOrCancelledExercises(){
     //this.uiService.loadingStateSchanged.next(true);
     this.store.dispatch(new UI.StartLoading()) ;
-    this.fbSubs.push(this.db.collection('finishedExercises').valueChanges()
+    this.fbSubs.push(this.db.collection(`newfinishedExercises/`+this.afAuth.auth.currentUser.uid+`/`+this.afAuth.auth.currentUser.uid).valueChanges()
     .subscribe((exercises : Exercise[])=>{
        // this.uiService.loadingStateSchanged.next(false);
        // this.finishedexercisesChanged.next(exercises);
@@ -143,7 +143,11 @@ export class TrainingService {
   }
 
   private addDataToDatabase(exercise : Exercise){
-       this.db.collection('finishedExercises').add(exercise);
+      // this.db.collection('finishedExercises').add(exercise);
+       this.db.collection('newfinishedExercises')
+       .doc(this.afAuth.auth.currentUser.uid)
+       .collection(this.afAuth.auth.currentUser.uid)
+       .add({...exercise});
   }
 
   
