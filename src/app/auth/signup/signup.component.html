@@ -1,0 +1,117 @@
+<div class="main-div">
+<mat-card class="signup-card" fxLayout="column" fxLayoutAlign="center center" >
+    <div mat-card-img class="example-header-image"></div>
+  <mat-card-header>      
+      <mat-card-title>Fitness Tracker Sign Up</mat-card-title>
+  </mat-card-header>
+<section class="signup-form">
+    <ng-form name="signupForm">
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px"
+    #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input 
+      type="text"
+      matInput 
+      placeholder="First Name" 
+      ngModel 
+      name="firstName"
+      required
+      #firstName="ngModel"
+      >
+      <mat-error *ngIf="firstName.hasError('required')">Filed must not be empty</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+      type="text"
+      matInput 
+      placeholder="Last Name" 
+      ngModel 
+      name="lastName"
+      #lastName="ngModel"
+      >
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+      type="email"
+      matInput 
+      placeholder="Your email" 
+      ngModel 
+      name="email"
+      email="true"
+      required
+      #emailInput="ngModel"
+      >
+      <mat-error *ngIf="emailInput.hasError('required')">Filed must not be empty</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Should be at least 6 characters long.">
+      <input 
+      type="password" 
+      matInput 
+      placeholder="Your password" 
+      ngModel 
+      name="password"
+      required
+      minlength="6"
+      #pwInput="ngModel">
+      <mat-hint align="end">{{ pwInput.value?.length }}/6</mat-hint>
+      <mat-error>Has to be atleast 6 chars long.</mat-error>
+      <!--  <mat-error ></mat-error> --> 
+    </mat-form-field>
+    <mat-form-field>
+      <input
+      matInput
+      placeholder="Date of birth"
+      [matDatepicker]="picker"
+      [max]="maxDate"
+      ngModel
+      name="birthDate"
+      required
+      >
+    <mat-datepicker-toggle matSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-datepicker #picker color="accent"></mat-datepicker>
+    </mat-form-field>
+    <mat-checkbox 
+    ngModel 
+    name="agree" 
+    required 
+    color="primary">
+    Agree to Terms and Conditions.
+   </mat-checkbox>
+   <!-- <mat-form-field >
+      <input 
+      type="text"
+      placeholder="Name"
+      matInput 
+      ngModel 
+      [required]="theFirst==='PRIV'" 
+      #second="ngModel" name="second"
+      >    -->
+     <!--  <mat-placeholder class="placeholder" *ngIf="theFirst==='PRIV'">Name</mat-placeholder>
+      <mat-placeholder *ngIf="!theFirst || theFirst==='PUBL'">Name</mat-placeholder> -->
+     <!--  <mat-hint class="hint" *ngIf = "theFirst==='PRIV'">Name is required</mat-hint>
+      <mat-error *ngIf="second.hasError('required') || theFirst==='PRIV'">
+          Name must not be empty.</mat-error> 
+    </mat-form-field> -->
+   
+    <!-- <mat-error *ngIf="theFirst==='PRIV'">Name must not be empty.</mat-error>  -->
+    
+    
+   <!-- <mat-radio-group name="first" [(ngModel)]="theFirst" #first="ngModel">
+      <mat-radio-button value="PRIV">Private</mat-radio-button>
+      <mat-radio-button value="PUBL">Public</mat-radio-button>
+  </mat-radio-group>-->
+    <button *ngIf="!(isLoading$ | async)"
+    type="submit" 
+    mat-raised-button 
+    color="primary"
+    [disabled]="f.invalid"
+    >
+    Submit
+  </button> 
+  <mat-spinner *ngIf="(isLoading$ | async)"></mat-spinner>
+   </form>
+    </ng-form>
+</section>
+</mat-card>
+</div>

@@ -1,0 +1,8 @@
+<section class="current-training" fxLayout="column" fxLayoutAlign="center center">
+  <mat-progress-spinner mode="determinate" [value]="progress"></mat-progress-spinner>
+  <h1>{{ progress }}%</h1>
+  <p *ngIf="progress!=100">Keep on going,you can do it!</p>
+  <!-- <p *ngIf="progress===100">You have done it! Great job</p> -->
+  <button mat-raised-button color="accent" *ngIf="progress!=100" (click)="onStop()">Stop</button>
+  <!-- <button mat-raised-button color="primary" *ngIf="progress===100" (click)="onFinish()">New Training</button> -->
+</section>

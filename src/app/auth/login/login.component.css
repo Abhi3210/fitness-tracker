@@ -1,0 +1,17 @@
+mat-form-field {
+    width: 300px;
+  }
+  
+  .main-div{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .example-header-image {
+    background-image: url('https://ntyen2013.files.wordpress.com/2013/06/worldhealthday.jpg');
+    background-size: cover;
+    width: 150px;
+    height: 150px;
+  }

@@ -1,0 +1,30 @@
+mat-form-field{
+    width:300px;
+}
+
+.hint{
+    color: blue;
+}
+
+.placeholder{
+    color:red;
+}
+
+.signup-card {
+    max-width: 400px;
+  }
+
+  .main-div{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .example-header-image {
+    background-image: url('http://go-forfitness.com/images/goforfit_logo2_tag_4c.jpg');
+    background-size: cover;
+    width: 150px;
+    height: 100px;
+  }
+  

@@ -1,0 +1,52 @@
+.welcome{
+    text-align: center;
+    }
+
+
+body{
+    background-color: darkgoldenrod;
+}
+
+mat-grid-tile {
+    
+  }
+ 
+.grid_span{
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 30px;   
+    padding-left: 30px;
+}
+
+.div_1 {
+    background-image: url('https://www.yourselfquotes.com/wp-content/uploads/2017/11/Quotes-of-Friday-Morning.jpg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;                      
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+  }
+.div_2{
+    font-family: 'Bariol',Arial;
+    color: #8f9a9e;
+    padding-top: 10px;
+}
+
+.div_3{
+    background-image: url('https://www.yourselfquotes.com/wp-content/uploads/2017/11/Quotes-of-Friday-Morning.jpg');
+    width: 100%;
+    height: 100%;
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.div_4{
+    background-image: url('https://www.yourselfquotes.com/wp-content/uploads/2017/11/Quotes-of-Friday-Morning.jpg');
+    width: 100%;
+    height: 100%;
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}

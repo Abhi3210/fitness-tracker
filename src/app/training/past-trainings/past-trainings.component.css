@@ -1,0 +1,33 @@
+.mat-table {
+    width: 100%;
+    overflow: auto;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 200%;
+  }
+
+  .main-div{
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .complete{  
+    color:rgb(6, 95, 6);  
+  }
+
+  .cancel{
+    height: 20px;
+    width: 20px;
+    background-color:rgb(179, 45, 12);
+    border-radius: 50%;
+    color:white;
+    text-align: center;
+  }
+
+  
+  
